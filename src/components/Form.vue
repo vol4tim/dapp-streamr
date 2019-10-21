@@ -37,6 +37,17 @@
 
 <script>
 export default {
+  props: {
+    onSubmit: {
+      type: Function
+    },
+    onChange: {
+      type: Function
+    },
+    isDisabled: {
+      default: false
+    }
+  },
   data() {
     return {
       form: {
@@ -56,8 +67,14 @@ export default {
       }
     };
   },
+  created() {
+    this.onChange(this.form.fields);
+  },
+  updated() {
+    this.onChange(this.form.fields);
+  },
   methods: {
-    validateForm() {
+    validate() {
       this.form.error = false;
       for (let field in this.form.fields) {
         this.form.fields[field].error = false;
@@ -75,6 +92,12 @@ export default {
         });
       }
       return !this.form.error;
+    },
+    submit() {
+      this.validate();
+      if (this.onSubmit) {
+        this.onSubmit(this.form.error, this.form.fields);
+      }
     }
   }
 };
