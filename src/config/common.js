@@ -1,7 +1,7 @@
 export default {
   CHAINS: [1],
   GATEWAY: 'https://ipfs.ipci.io/ipfs/',
-  STREAMR_KEY: 'LnI1RC66Y7xfWGGK8QkwZ50I-uTgCQx8Z-5lcyTg',
+  STREAMR_KEY: '_KJClVZ4Q9S-hsFmxDHcGQPlxBKlT1RQaktoXWOX5AhQ',
   MODEL: 'QmZQKV8E3hjyxnEQGq1d4XCmeUDfzkAhryoJG3pcBkoUE6',
   PRICE: 5000000,
   IPFS: {
